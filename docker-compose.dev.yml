@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  rails_chat_dev:
+      build:
+        context: ./rails-chat-service
+        target: development
+      env_file:
+        - ./rails-chat-service/config/envfiles/development.env
+      ports:
+        - 3000:3000
+      depends_on:
+        - db
+      restart: always
+  db:
+    image: mysql:5.7
+    restart: always
+    env_file:
+      - ./rails-chat-service/config/envfiles/development.env
+    ports: 
+      - '3307:3306'
+    volumes:
+      - ~/mysql_data/chat_system_dev:/var/lib/mysql

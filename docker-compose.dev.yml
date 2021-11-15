@@ -11,6 +11,10 @@ services:
       depends_on:
         - db
       restart: always
+      links:
+        - db    
+      volumes: 
+        - "./rails-chat-service:/app"  
   db:
     image: mysql:5.7
     restart: always

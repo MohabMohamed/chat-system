@@ -11,6 +11,8 @@ services:
       depends_on:
         - db
       restart: always
+      links:
+        - db
   db:
     image: mysql:5.7
     restart: always

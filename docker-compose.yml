@@ -13,6 +13,19 @@ services:
       restart: always
       links:
         - db
+  go_chat_dev:
+      build:
+        context: ./go-chat-service
+        target: production
+      env_file:
+        - ./go-chat-service/config/production.env
+      ports:
+        - 3000:8000
+      depends_on:
+        - db
+      restart: always
+      links:
+        - db
   db:
     image: mysql:5.7
     restart: always

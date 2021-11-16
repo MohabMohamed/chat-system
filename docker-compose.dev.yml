@@ -15,6 +15,21 @@ services:
         - db    
       volumes: 
         - "./rails-chat-service:/app"  
+  go_chat_dev:
+      build:
+        context: ./go-chat-service
+        target: development
+      env_file:
+        - ./go-chat-service/config/development.env
+      ports:
+        - 8000:8000
+      depends_on:
+        - db
+      restart: always
+      links:
+        - db    
+      volumes: 
+        - "./go-chat-service:/app"
   db:
     image: mysql:5.7
     restart: always

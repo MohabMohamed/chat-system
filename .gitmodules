@@ -1,3 +1,6 @@
 [submodule "rails-chat-service"]
 	path = rails-chat-service
 	url = https://github.com/MohabMohamed/rails-chat-service.git
+[submodule "go-chat-service"]
+	path = go-chat-service
+	url = https://github.com/MohabMohamed/go-chat-service.git

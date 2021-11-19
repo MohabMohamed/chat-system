@@ -14,7 +14,8 @@ services:
       links:
         - db    
       volumes: 
-        - "./rails-chat-service:/app"  
+        - "./rails-chat-service:/app"
+        - /app/tmp/
   go_chat_dev:
       build:
         context: ./go-chat-service

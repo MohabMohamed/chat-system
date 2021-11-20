@@ -35,3 +35,7 @@ That solution would be performant but at some downsides like `MyISAM` don't supp
 
 The third solution was to define triggers for inserting new chat or new message that handle that columns and in `InnoDB`
 if the trigger performs a write it locks the table implicitly for `WRITE` , that's right this solution will be a little slower than the second but won't have any other downside.
+
+## Leftout work
+
+Adding swagger documentation (open-api) and specs for remaining endpoints (did it for application endpoints only). And caching some endpoints results using redis .

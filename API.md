@@ -208,6 +208,19 @@ Status codes:
   Message found.
 ```
 
+### `GET api/v1/applications/:token/chats/:chat_num/messages/search?search_keyword=<search_keyword>`
+
+Get all messages with the search_keyword query.
+
+Status codes:
+
+```yaml
+200:
+  Message returned.
+404:
+  Application or chat with given params not found.
+```
+
 ## go service (default port 8000)
 
 ### `POST api/v1/applications/:application_token/chats`

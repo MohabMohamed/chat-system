@@ -10,6 +10,7 @@ services:
         - 3000:3000
       depends_on:
         - db
+        - elasticsearch
       restart: always
       links:
         - db    
@@ -26,6 +27,7 @@ services:
         - 8000:8000
       depends_on:
         - db
+        - elasticsearch
       restart: always
       links:
         - db    
